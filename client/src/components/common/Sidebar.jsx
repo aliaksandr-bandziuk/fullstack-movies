@@ -75,7 +75,7 @@ const Sidebar = ({ open, toggleSidebar }) => {
           ))}
         </>)}
         <Typography variant="h6" marginBottom="20px">THEME</Typography>
-        <ListItemButton>
+        <ListItemButton onClick={onSwitchTheme}>
           <ListItemIcon>
             {themeMode === themeMode.dark && <DarkModeOutlinedIcon />}
             {themeMode === themeMode.light && <WbSunnyOutlinedIcon/>}
