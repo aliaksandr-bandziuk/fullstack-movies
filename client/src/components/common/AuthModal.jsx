@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux"
 
 import { setAuthModalOpen } from "../../redux/features/authModalSlice"
 import Logo from "./Logo"
+import SinginForm from './SinginForm'
+import SingupForm from './SingupForm'
 
 const actionState = {
   singin: "singin",
@@ -20,8 +22,6 @@ const AuthModal = () => {
 
   useEffect(() => {
     if (authModalOpen) setAction(actionState.singin)
-
-
   }, [authModalOpen])
 
   const handleClose = () => dispatch(setAuthModalOpen(false))
@@ -44,6 +44,10 @@ const AuthModal = () => {
           <Box sx={{ texAlign: "center", marginBottom: "2rem"}}>
             <Logo />
           </Box>
+
+          {action === actionState.singin && <SinginForm switchAuthState={() => switchAuthState(actionState.singup)} />}
+
+          {action === actionState.singup && <SingupForm switchAuthState={() => switchAuthState(actionState.singin)} />}
         </Box>
       </Box>
     </Modal>
