@@ -1,6 +1,6 @@
 import { Box, Typography, CircularProgress } from "@mui/material"
 
-const CircularRate = () => {
+const CircularRate = ({ value }) => {
   return (
     <Box sx={{
       position: "relative",
